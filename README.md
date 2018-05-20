@@ -1,4 +1,4 @@
-# glo
+# GLO
 
 Global Logistics Operations
 
