@@ -1,14 +1,12 @@
-FROM node:9
+FROM node:alpine
 
-RUN npm i npm@latest -g
+RUN apk add --update yarn
+RUN yarn global add serve
 
-WORKDIR /app
+WORKDIR /opt/app
 
-ADD package.json /app/package.json
-RUN npm install
+ADD ./dist/glo /opt/app
 
-ADD . /app
+EXPOSE 5000
 
-ENV PATH=/app/node_modules/.bin:$PATH
-
-CMD ng serve --prod --port 4200 --host 0.0.0.0
+ENTRYPOINT serve -s

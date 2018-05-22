@@ -28,7 +28,6 @@ export class MainNavComponent implements OnInit {
 
   openMissionPlanning(initialCartesian3?: Cartesian3) {
     if (!this.missionDialogOpenFirst && !this.missionDialogOpenSecond) {
-      console.log('open');
       this.onMenuItemClick.emit();
       this.missionDialogFirstRef = this.dialog.open(MissionPlanningFirstFormComponent, {
         height: '530px',
